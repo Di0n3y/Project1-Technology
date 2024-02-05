@@ -8,6 +8,7 @@ TagManager:
   - LimitLeft
   - Enemy
   - Bullet
+  - BulletEnemy
   layers:
   - Default
   - TransparentFX

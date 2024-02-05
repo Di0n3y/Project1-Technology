@@ -18,7 +18,7 @@ public class InputHandler : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
             _onFire?.Invoke();
 
-        if (Input.GetKeyDown(KeyCode.E)) 
+        if (Input.GetKeyDown(KeyCode.Space)) 
             _Shield?.Invoke();
 
 

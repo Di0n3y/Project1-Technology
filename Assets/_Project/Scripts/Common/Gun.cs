@@ -13,7 +13,7 @@ public class Gun : MonoBehaviour
     public void Shoot () 
     {
 
-        if (_currentCooldown >= Time.timeSinceLevelLoad) 
+        if (_currentCooldown <= Time.timeSinceLevelLoad) 
         {
             Instantiate(_bulletPrefab, _spawnPoint.position,_spawnPoint.rotation);
             _currentCooldown = Time.timeSinceLevelLoad + _cooldown;
