@@ -67,7 +67,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + _score.ToString();
+            scoreText.text = "SCORE: " + _score.ToString();
         }
     }
 
@@ -76,7 +76,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (eliminationsText != null)
         {
-            eliminationsText.text = "Eliminations: " + _eliminations.ToString() + "/20";
+            eliminationsText.text =  _eliminations.ToString() + "/20";
         }
     }
 }
