@@ -9,7 +9,8 @@ public class ScoreManager : MonoBehaviour
     private int _eliminations = 0;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI eliminationsText;
-
+    [SerializeField] private GameObject victoryPanel;
+    [SerializeField] private int eliminationsRequired = 20;
 
     private void Start()
     {
@@ -54,6 +55,12 @@ public class ScoreManager : MonoBehaviour
     {
         _eliminations++;
         UpdateEliminationsText();
+
+        if (_eliminations >= eliminationsRequired)
+        {
+            ShowVictoryPanel();
+            PauseGame();
+        }
     }
 
     
@@ -76,7 +83,21 @@ public class ScoreManager : MonoBehaviour
     {
         if (eliminationsText != null)
         {
-            eliminationsText.text =  _eliminations.ToString() + "/20";
+            eliminationsText.text =  _eliminations.ToString() + "/" + eliminationsRequired.ToString();
         }
+    }
+
+    private void ShowVictoryPanel()
+    {
+        if (victoryPanel != null)
+        {
+            victoryPanel.SetActive(true); 
+        }
+    }
+
+
+    private void PauseGame()
+    {
+        Time.timeScale = 0f; 
     }
 }
